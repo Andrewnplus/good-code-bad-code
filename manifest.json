@@ -1,0 +1,15 @@
+{
+  "name": "Good Code, Bad Code",
+  "short_name": "Good Code, Bad Code",
+  "start_url": "/good-code-bad-code/",
+  "scope": "/good-code-bad-code/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/good-code-bad-code/favicon.svg",
+      "sizes": "512x512"
+    }
+  ]
+}

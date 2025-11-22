@@ -1,0 +1,83 @@
+<!doctype html><html lang=zh dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="
+  程式碼品質
+  #
+
+本文討論了高品質程式碼的定義，包括其應達成的核心目標和影響其品質的六個關鍵要素。
+
+  
+      
+          程式碼的品質
+          高
+          低
+      
+  
+  
+      
+          既有需求
+          完全符合
+          在失控邊緣，不完全符合
+      
+      
+          需求變更時
+          對應工作量小
+          需大幅重做和重構
+      
+      
+          錯誤對系統的影響
+          仍能正常還原或優雅結束
+          進入不可知狀態，資料可能受損
+      
+      
+          有沒被預期的應用場景
+          系統仍可控
+          系統進入不可知狀態，資料可能受損
+      
+      
+          系統受到攻擊
+          在安全狀態，不會受損
+          進入未定義狀態，資料可能受損
+      
+      
+          對應的軟體樣貌
+          可信賴、易維護、Bug 少
+          不可信賴、難以維護、Bug 眾多
+      
+  
+
+高品質程式碼應達成的四個目標:
+
+能運作（解決問題）
+能持續運作（持續解決問題，不會有天突然失能）
+能適應不斷變化的需求（即便問題改變，仍能快速應對來解決）
+不用重新發明輪子（省力、少出錯、運用現有知識、讓程式碼更易理解）
+
+影響程式碼品質的六個關鍵:
+
+可讀性佳
+意外（驚喜）出現情況少
+不會被誤用
+可被模組化（Modularize）：物件或系統由獨立交換（可替代）的小元件所組成
+
+模組間使用良好定義的介面互相交流，進而縮限新增功能的修改範圍
+功能被分解成可管理的區塊，整體系統更易理解和推理
+
+
+程式碼可重用和可泛化：
+
+可重用性（resuability）：東西能在不同場景下用來解決相同問題
+可泛化性（generalizability）：東西能解決情境不同但概念相似的問題
+
+
+可測試且能正確測試：防止錯誤或損壞的功能程式碼出現，或最後被釋出
+"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://nplus.wiki/good-code-bad-code/docs/1-in-theory/1-code-quality/"><meta property="og:site_name" content="Good Code, Bad Code"><meta property="og:title" content="程式碼品質"><meta property="og:description" content="程式碼品質 # 本文討論了高品質程式碼的定義，包括其應達成的核心目標和影響其品質的六個關鍵要素。
+程式碼的品質 高 低 既有需求 完全符合 在失控邊緣，不完全符合 需求變更時 對應工作量小 需大幅重做和重構 錯誤對系統的影響 仍能正常還原或優雅結束 進入不可知狀態，資料可能受損 有沒被預期的應用場景 系統仍可控 系統進入不可知狀態，資料可能受損 系統受到攻擊 在安全狀態，不會受損 進入未定義狀態，資料可能受損 對應的軟體樣貌 可信賴、易維護、Bug 少 不可信賴、難以維護、Bug 眾多 高品質程式碼應達成的四個目標:
+能運作（解決問題） 能持續運作（持續解決問題，不會有天突然失能） 能適應不斷變化的需求（即便問題改變，仍能快速應對來解決） 不用重新發明輪子（省力、少出錯、運用現有知識、讓程式碼更易理解） 影響程式碼品質的六個關鍵:
+可讀性佳 意外（驚喜）出現情況少 不會被誤用 可被模組化（Modularize）：物件或系統由獨立交換（可替代）的小元件所組成 模組間使用良好定義的介面互相交流，進而縮限新增功能的修改範圍 功能被分解成可管理的區塊，整體系統更易理解和推理 程式碼可重用和可泛化： 可重用性（resuability）：東西能在不同場景下用來解決相同問題 可泛化性（generalizability）：東西能解決情境不同但概念相似的問題 可測試且能正確測試：防止錯誤或損壞的功能程式碼出現，或最後被釋出"><meta property="og:locale" content="zh"><meta property="og:type" content="website"><title>程式碼品質 | Good Code, Bad Code</title><link rel=icon href=/good-code-bad-code/favicon.png><link rel=manifest href=/good-code-bad-code/manifest.json><link rel=canonical href=https://nplus.wiki/good-code-bad-code/docs/1-in-theory/1-code-quality/><link rel=stylesheet href=/good-code-bad-code/book.min.f64c7101e88d930d896a6902f7ebd7efb90bb20a4625988d76b5fb888c15c281.css integrity="sha256-9kxxAeiNkw2JamkC9+vX77kLsgpGJZiNdrX7iIwVwoE=" crossorigin=anonymous><script defer src=/good-code-bad-code/fuse.min.js></script><script defer src=/good-code-bad-code/en.search.min.afe7122adc49ae00a24369ed2e0d48e59a072324f6c491ed92baa44cf35425b7.js integrity="sha256-r+cSKtxJrgCiQ2ntLg1I5ZoHIyT2xJHtkrqkTPNUJbc=" crossorigin=anonymous></script><link rel=alternate type=application/rss+xml href=https://nplus.wiki/good-code-bad-code/docs/1-in-theory/1-code-quality/index.xml title="Good Code, Bad Code"></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/good-code-bad-code/><img src=/good-code-bad-code/logo.png alt=Logo class=book-icon><span>Good Code, Bad Code</span></a></h2><div class="book-search hidden"><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul><li><input type=checkbox id=section-73def065456d52709d81924b1073429d class=toggle checked>
+<label for=section-73def065456d52709d81924b1073429d class="flex justify-between"><a href=/good-code-bad-code/docs/1-in-theory/>理論篇</a></label><ul><li><a href=/good-code-bad-code/docs/1-in-theory/1-code-quality/ class=active>程式碼品質</a><ul></ul></li><li><a href=/good-code-bad-code/docs/1-in-theory/2-layers-of-abstraction/>抽象層</a><ul></ul></li><li><a href=/good-code-bad-code/docs/1-in-theory/3-other-engineers-and-code-contracts/>其他工程師與程式碼契約</a><ul></ul></li><li><a href=/good-code-bad-code/docs/1-in-theory/4-errors/>錯誤</a><ul></ul></li></ul></li><li><input type=checkbox id=section-ea12b68c77cf7d358135f84af15ddf41 class=toggle>
+<label for=section-ea12b68c77cf7d358135f84af15ddf41 class="flex justify-between"><a href=/good-code-bad-code/docs/2-in-practice/>實務篇</a></label><ul><li><a href=/good-code-bad-code/docs/2-in-practice/5-make-code-readable/>讓程式碼具有可讀性</a><ul></ul></li><li><a href=/good-code-bad-code/docs/2-in-practice/6-avoid-surprises/>避免意外的驚訝</a><ul></ul></li><li><a href=/good-code-bad-code/docs/2-in-practice/7-make-code-hard-to-misuse/>讓程式碼不易被誤用</a><ul></ul></li><li><a href=/good-code-bad-code/docs/2-in-practice/8-make-code-modular/>讓程式碼模組化</a><ul></ul></li><li><a href=/good-code-bad-code/docs/2-in-practice/9-make-code-reusable-and-generalizable/>讓程式碼可重用和可泛化</a><ul></ul></li></ul></li><li><input type=checkbox id=section-5d1523d3adde37e2db6ef877662a5a85 class=toggle>
+<label for=section-5d1523d3adde37e2db6ef877662a5a85 class="flex justify-between"><a href=/good-code-bad-code/docs/3-unit-testing/>單元測試篇</a></label><ul><li><a href=/good-code-bad-code/docs/3-unit-testing/10-unit-testing-principles/>單元測試原則</a><ul></ul></li><li><a href=/good-code-bad-code/docs/3-unit-testing/11-unit-testing-practices/>單元測試實務</a><ul></ul></li></ul></li></ul><button class="btn hidden-lt-md" style=width:100%;margin-top:1rem onclick=switchTheme()>
+🌓 Theme
+</button>
+<script defer src=/good-code-bad-code/js/theme-toggle.js></script></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/good-code-bad-code/svg/menu.svg class=book-icon alt=Menu></label><h3>程式碼品質</h3><label for=toc-control><img src=/good-code-bad-code/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents></nav></aside></header><article class="markdown book-article"><h1 id=程式碼品質>程式碼品質
+<a class=anchor href=#%e7%a8%8b%e5%bc%8f%e7%a2%bc%e5%93%81%e8%b3%aa>#</a></h1><p>本文討論了高品質程式碼的定義，包括其應達成的核心目標和影響其品質的六個關鍵要素。</p><table><thead><tr><th style=text-align:left>程式碼的品質</th><th style=text-align:left><strong>高</strong></th><th style=text-align:left><strong>低</strong></th></tr></thead><tbody><tr><td style=text-align:left><strong>既有需求</strong></td><td style=text-align:left>完全符合</td><td style=text-align:left>在失控邊緣，不完全符合</td></tr><tr><td style=text-align:left><strong>需求變更時</strong></td><td style=text-align:left>對應工作量小</td><td style=text-align:left>需大幅重做和重構</td></tr><tr><td style=text-align:left><strong>錯誤對系統的影響</strong></td><td style=text-align:left>仍能正常還原或優雅結束</td><td style=text-align:left>進入不可知狀態，資料可能受損</td></tr><tr><td style=text-align:left><strong>有沒被預期的應用場景</strong></td><td style=text-align:left>系統仍可控</td><td style=text-align:left>系統進入不可知狀態，資料可能受損</td></tr><tr><td style=text-align:left><strong>系統受到攻擊</strong></td><td style=text-align:left>在安全狀態，不會受損</td><td style=text-align:left>進入未定義狀態，資料可能受損</td></tr><tr><td style=text-align:left><strong>對應的軟體樣貌</strong></td><td style=text-align:left>可信賴、易維護、Bug 少</td><td style=text-align:left>不可信賴、難以維護、Bug 眾多</td></tr></tbody></table><p>高品質程式碼應達成的四個目標:</p><ul><li>能運作（解決問題）</li><li>能持續運作（持續解決問題，不會有天突然失能）</li><li>能適應不斷變化的需求（即便問題改變，仍能快速應對來解決）</li><li>不用重新發明輪子（省力、少出錯、運用現有知識、讓程式碼更易理解）</li></ul><p>影響程式碼品質的六個關鍵:</p><ul><li>可讀性佳</li><li>意外（驚喜）出現情況少</li><li>不會被誤用</li><li>可被模組化（Modularize）：物件或系統由獨立交換（可替代）的小元件所組成<ul><li>模組間使用良好定義的介面互相交流，進而縮限新增功能的修改範圍</li><li>功能被分解成可管理的區塊，整體系統更易理解和推理</li></ul></li><li>程式碼可重用和可泛化：<ul><li>可重用性（resuability）：東西能在不同場景下用來解決相同問題</li><li>可泛化性（generalizability）：東西能解決情境不同但概念相似的問題</li></ul></li><li>可測試且能正確測試：防止錯誤或損壞的功能程式碼出現，或最後被釋出</li></ul></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents></nav></div></aside></main></body></html>
